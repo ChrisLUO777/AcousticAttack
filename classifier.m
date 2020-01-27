@@ -1,10 +1,11 @@
 close all; clear;
 load(".\samples.mat");
 %%
-%train SVM
-X=samples(1:2:259,1:4);
+%train model
+subfeature=[5 8 10 7 6 3 9 14 17];
+X=samples(1:2:259,subfeature);
 m = size(X, 1);
-Xtest=samples(2:2:260,1:4);
+Xtest=samples(2:2:260,subfeature);
 mtest=size(Xtest,1);
 
 %%
@@ -47,7 +48,7 @@ for letter=0:25
     y(1+letter*5:5+letter*5)=0;
     ytest=ones(130,1);
     ytest(1+letter*5:5+letter*5)=0;
-    %model=fitcsvm(X,y,'KernelFunction','linear');
+    %model=fitcsvm(X,y,'KernelFunction','poly');
     model=fitcknn(X,y);
     [label,score] = predict(model,Xtest);
     %label=ones(130,1);

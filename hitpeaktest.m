@@ -1,6 +1,6 @@
 close all; clear;
-[y,Fs] = audioread("E:\MATLABprogram\AcousticAttack\single key samples\wav\A.wav");
-y=bandpass(y,[1000 1200],Fs);
+[y,Fs] = audioread("E:\MATLABprogram\AcousticAttack\single key samples\splitsp\GA\GA1.wav");
+y=bandpass(y,[1000 1500],Fs);
 A=zeros(size(y,1)-11,2);
 hitpeaks=zeros(500,2);
 count1=1;

@@ -1,10 +1,10 @@
 close all; clear;
-key="A";
+key="Z";
 [y,Fs] = audioread("E:\MATLABprogram\AcousticAttack\single key samples\wav\"+key+".wav");
 %mkdir("E:\MATLABprogram\AcousticAttack\single key samples\splitsp\G"+key);
-y=bandpass(y,[1000 1200],Fs);
+y=bandpass(y,[1000 1500],Fs);
 %plot(y(:,1));
-peaks=hitpeak(y,0.0001);
+peaks=hitpeak(y,0.005);
 count=1;
 for left=1:20
     if peaks(left,1)~=0

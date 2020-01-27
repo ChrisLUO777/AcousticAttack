@@ -5,9 +5,15 @@ for name=subname
     %mkdir(".\features\G"+name);
     for i=1:10
         [y,Fs] = audioread(".\"+path+"\G"+name+"\G"+name+i+".wav");
-        %tdoaphat(y,Fs,name,i);
-        %tdoapeak(y,Fs,name,i);
-        tdoaccml(y,Fs,name,i);
+%         tdoaphat(y,Fs,name,i);
+%         tdoapeak(y,Fs,name,i);
+%         tdoaccml(y,Fs,name,i);
+%         tdoalms(y,Fs,name,i);
+%         energyratio(y,Fs,name,i);
+%         energydiff(y,Fs,name,i);
+%         energyvalue(y,Fs,name,i);
+         flux(y,Fs,name,i);
+         centroid(y,Fs,name,i);
     end
 end
 
