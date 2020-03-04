@@ -1,6 +1,6 @@
 close all; clear;
 %[y,Fs] = audioread('E:\MATLABprogram\KEMAR\VRsample\Google\Gs1.wav');
-[y,Fs] = audioread('E:\MATLABprogram\AcousticAttack\single key samples\wav\A.wav');
+[y,Fs] = audioread('E:\MATLABprogram\AcousticAttack\single key samples\wav\P.wav');
 %[y,Fs] = audioread('E:\MATLABprogram\AcousticAttack\single key samples\wav\ChangingVoice1.wav');
 y=bandpass(y,[1000 1500],Fs);
 %%
@@ -20,7 +20,10 @@ y=bandpass(y,[1000 1500],Fs);
 %plot(f(1,1:11008),P1(1:11008,1));
 %%
 %time domain
+
 plot(y(:,1));
 hold on;
 plot(y(:,2));
+ylim([-0.08 0.08]);
+
 %sound(y,Fs);

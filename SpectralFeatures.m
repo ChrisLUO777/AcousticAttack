@@ -1,5 +1,5 @@
 close all; clear;
-[y,fs] = audioread('E:\MATLABprogram\AcousticAttack\single key samples\splitsp\GP\GP3.wav');
+[y,fs] = audioread('E:\MATLABprogram\AcousticAttack\single key samples\splitsp\GA\GA3.wav');
 % Fast Fourier Transformation
 y_fft = fft(y);
  %Fundamental Frequency

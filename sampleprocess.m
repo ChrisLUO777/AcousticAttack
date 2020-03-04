@@ -1,5 +1,5 @@
 close all; clear;
-key="Z";
+key="A";
 [y,Fs] = audioread("E:\MATLABprogram\AcousticAttack\single key samples\wav\"+key+".wav");
 %mkdir("E:\MATLABprogram\AcousticAttack\single key samples\splitsp\G"+key);
 y=bandpass(y,[1000 1500],Fs);
