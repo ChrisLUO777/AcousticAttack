@@ -4,5 +4,5 @@ function centroid=centroid(y,Fs,name,number)
     centroid(1,2)=std(tempcentroid(:,1));
     centroid(1,3)=sum(tempcentroid(:,2));
     centroid(1,4)=std(tempcentroid(:,2));
-    save(".\features\G"+name+"\G"+name+number+"centroid.mat",'centroid');
+    save(".\G"+name+"\G"+name+number+"centroid.mat",'centroid');
 end

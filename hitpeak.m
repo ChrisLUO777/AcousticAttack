@@ -1,7 +1,7 @@
-function [thresholdl,thresholdr,energylevel,hitpeaks] = hitpeak(y)
-Fs=48000;
+function [energylevel,hitpeaks] = hitpeak(y,thresholdl,thresholdr)
+Fs=44100;
 A=zeros(size(y,1)-11,2);
-hitpeaks=zeros(20,2);
+hitpeaks=zeros(100,2);
 count1=1;
 count2=1;
 for t=1:size(y,1)-11
@@ -11,10 +11,8 @@ for t=1:size(y,1)-11
     end
 end
 energylevel=A;
-% plot(A(:,1))
-[thresholdl,thresholdr]=OtsuThresh(A);
-% thresholdl=0.8*min(A(:,1))+0.1*max(A(:,1));
-% thresholdr=0.8*min(A(:,2))+0.1*max(A(:,2));
+% plot(A(:,1));hold on;plot(A(:,2));
+% [thresholdl,thresholdr]=OtsuThresh(A);
 for t=1:size(A,1)-0.18*Fs
     if A(t,1)>thresholdl
         for n=-0.02*Fs:0.18*Fs    %W=200ms

@@ -188,7 +188,7 @@ function soundsourcefeatures(y,fs,name,number,valuename)
     save(".\G"+name+"\G"+name+number+valuename+"std.mat",'stdvalue');
     save(".\G"+name+"\G"+name+number+valuename+"rms.mat",'rmsvalue');
     save(".\G"+name+"\G"+name+number+valuename+"skewness.mat",'skewnessvalue');
-    save(".\G"+name+"\G"+name+number+valuename+"kurtoisis.mat",'kurtosisvalue');
+    save(".\G"+name+"\G"+name+number+valuename+"kurtosis.mat",'kurtosisvalue');
     save(".\G"+name+"\G"+name+number+valuename+"iqr.mat",'iqrvalue');
     save(".\G"+name+"\G"+name+number+valuename+"zcr.mat",'zcrvalue');
     save(".\G"+name+"\G"+name+number+valuename+"mean.mat",'meanvalue');
