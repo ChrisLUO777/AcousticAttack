@@ -1,8 +1,8 @@
 close all; clear;
-% subname=["A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z"];
+% subname=('A':'Z');
 subname=('A':'I');
 for name=subname
-    path="..\single key samples\All direction Clicks v0.1\splitsp";
+    path="..\single key samples\All direction Clicks v0.1\filtered wavelet splitsp";
     mkdir(".\G"+name);
     for i=1:20
         [y,Fs] = audioread(".\"+path+"\"+name+"\"+name+i+".wav");
