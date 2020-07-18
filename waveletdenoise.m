@@ -1,7 +1,7 @@
 clear;close all
-for key = ('A':'I')
-    readpath=".\single key samples\All direction Clicks v0.1\splitsp\"+key ;
-    savepath = ".\single key samples\All direction Clicks v0.1\filtered wavelet splitsp\"+key ;
+for key = ('A':'Z')
+    readpath=".\single key samples\letters v0.2\splitsp\"+key ;
+    savepath = ".\single key samples\letters v0.2\filtered wavelet splitsp\"+key ;
     mkdir(savepath);
      for i = 1:20
         [y,fs] = audioread(readpath+"\"+key+i+".wav");

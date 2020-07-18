@@ -12,9 +12,9 @@ for key= ['a':'p','r':'z']
 %     plot(A(:,1));hold on;plot(A(:,2));
     count=1;
     templeftpeak=-Inf;
-    for left=1:100
+    for left=1:500
         if clicks(left,1)~=0 && (clicks(left,1)-templeftpeak)>0.3*Fs
-            for right=1:100
+            for right=1:500
                 if clicks(left,1)-clicks(right,2)<0.07*Fs && clicks(left,1)-clicks(right,2)>-0.07*Fs %match left and right peaks
                         realclick(count,1)=ceil((clicks(left,1)+clicks(right,2))/2);
                         count=count+1;
@@ -27,15 +27,15 @@ for key= ['a':'p','r':'z']
             end
         end
     end
-    for timeidx=1:10
-        timingrec{letter*10+timeidx,1}=(realclick(timeidx*2,1)-realclick(timeidx*2-1,1))/Fs;
-        timingrec{letter*10+timeidx,2}=key;
-        timingrec{letter*10+timeidx,3}=strcat(key,int2str(timeidx));
+    for timeidx=1:30
+        timingrec{letter*30+timeidx,1}=(realclick(timeidx*2,1)-realclick(timeidx*2-1,1))/Fs;
+        timingrec{letter*30+timeidx,2}=key;
+        timingrec{letter*30+timeidx,3}=strcat(key,int2str(timeidx));
     end
     letter=letter+1;
 end
 smptitle={'timing' 'letter' 'smplID'};
 samples=[smptitle;timingrec];
-save(".\interKeyTiming_v0.1.mat",'samples');
-filename = 'interKeyTiming_v0.1.csv';    %must end in csv
+save(".\interKeyTiming_v0.2.mat",'samples');
+filename = 'interKeyTiming_v0.2.csv';    %must end in csv
 writetable( cell2table(samples), filename, 'writevariablenames', false, 'quotestrings', false);

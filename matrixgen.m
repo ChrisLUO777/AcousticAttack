@@ -1,6 +1,6 @@
 close all; clear;
-% subname=('A':'Z');
-subname=('A':'I');
+% subname=('A':'I');
+subname=('A':'Z');
 % samples{180,34}='Z';
 letter=0;
 samplenum=20;
@@ -64,6 +64,6 @@ smptitle={'IQRL' 'IQRR' 'SkewnessL' 'SkewnessR' 'KurtosisL' 'KurtosisR' 'Corr' '
     'MFCCkurtosis1' 'MFCCkurtosis2' 'MFCCkurtosis3' 'MFCCkurtosis4' ...
     'MFCCcorr1' 'MFCCcorr2' 'letter' 'smplID'};
 samples=[smptitle;samples];
-save(".\idealsamples_v0.1.mat",'samples');
-filename = 'idealsamples_v0.1.csv';    %must end in csv
+save(".\letters_v0.2.mat",'samples');
+filename = 'letters_v0.2.csv';    %must end in csv
 writetable( cell2table(samples), filename, 'writevariablenames', false, 'quotestrings', false);

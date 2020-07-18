@@ -1,7 +1,7 @@
 function [energylevel,hitpeaks] = hitpeak(y,thresholdl,thresholdr)
 Fs=44100;
 A=zeros(size(y,1)-11,2);
-hitpeaks=zeros(100,2);
+hitpeaks=zeros(500,2);
 count1=1;
 count2=1;
 for t=1:size(y,1)-11

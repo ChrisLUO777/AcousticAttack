@@ -1,13 +1,14 @@
 close all; clear;
-key="I";
-path=".\single key samples\All direction Clicks v0.1\";
+key="Z";
+path=".\single key samples\letters v0.2\";
 [y,Fs] = audioread(path+key+".wav");
 
 mkdir(path+"splitsp\"+key);
 y=bandpass(y,[1000 3000],Fs);
 % plot(y(:,1));
 [A,clicks]=matchclick(y);
-plot(A(:,1));hold on;plot(A(:,2));
+plot(A(:,1));hold on;
+plot(A(:,2));
 count=1;
 templeftpeak=-Inf;
 for left=1:100
